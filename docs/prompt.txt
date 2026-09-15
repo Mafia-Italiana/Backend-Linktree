@@ -1,1 +1,198 @@
- As animações devem ser discretas e não prejudicar a usabilidade. ### Interação com os links Ao clicar em um botão, o usuário deve ser direcionado ao endereço configurado. Adicione também uma mensagem visual opcional de feedback ao clicar em um link, sem impedir sua navegação. ### Ano automático Utilize JavaScript para inserir automaticamente o ano atual no rodapé. ## 6. Responsividade O site deve funcionar perfeitamente em: * Celulares.* Tablets.* Notebooks.* Monitores grandes. Utilize CSS Media Queries para adaptar o layout. Requisitos: * A página não pode apresentar rolagem horizontal.* Os botões devem ocupar uma largura adequada em telas pequenas.* O texto deve permanecer legível.* O perfil deve ficar centralizado.* O layout deve se adaptar sem quebrar.* Os elementos devem possuir espaçamentos consistentes. ## 7. Organização do código Separe corretamente HTML, CSS e JavaScript. No HTML: * Utilize tags semânticas como `header`, `main`, `section` e `footer`.* Utilize atributos `alt` nas imagens.* Utilize elementos acessíveis e bem estruturados. No CSS: * Organize as regras por seções.* Utilize variáveis CSS para cores e estilos.* Evite código repetido.* Crie Media Queries para responsividade. No JavaScript: * Utilize funções bem organizadas.* Utilize `addEventListener`.* Evite código desnecessariamente complexo.* Comente as partes importantes para facilitar o aprendizado. ## 8. Requisitos extras Se possível, inclua: * Ícones usando emojis ou SVG inline, sem depender de bibliotecas externas.* Um botão para copiar o e-mail do aluno.* Contador visual de cliques nos links, apenas como demonstração local.* Uma pequena seção "Sobre mim".* Boa acessibilidade com foco visível nos botões.* Respeito à preferência de redução de movimento do usuário. ## 9. Forma de entrega Entregue o projeto completo, contendo: 1. Código do arquivo `index.html`.2. Código do arquivo `style.css`.3. Código do arquivo `script.js`.4. Explicação breve sobre como cada arquivo funciona.5. Instruções para executar o projeto no navegador.6. Sugestões de personalização para o aluno trocar nome, foto, cores e links. **Importante:** O código deve ser funcional, completo e pronto para copiar e executar. Não entregue apenas exemplos ou trechos incompletos. Desenvolva uma interface visualmente atraente, mas mantenha o código compreensível para um aluno iniciante que está aprendendo desenvolvimento web. 
+# Desenvolvimento de uma Página Pessoal no Estilo Linktree
+
+Você é um desenvolvedor web front-end especializado em HTML, CSS e JavaScript. Sua tarefa é desenvolver uma página pessoal no estilo Linktree, reunindo os links importantes de um aluno em uma única interface moderna, bonita, responsiva e funcional.
+
+## 1. Objetivo do projeto
+
+Criar uma página pessoal que funcione como um cartão de visita digital, permitindo que o aluno apresente suas informações e disponibilize links importantes, como redes sociais, portfólio, GitHub, LinkedIn e outros projetos.
+
+O projeto deve servir como atividade prática para aprender e aplicar:
+
+* HTML semântico.
+* CSS e estilização de interfaces.
+* JavaScript e interatividade.
+* Responsividade para celulares, tablets e computadores.
+* Organização de código.
+* Utilização de inteligência artificial como ferramenta de desenvolvimento, sem depender dela para todas as etapas.
+
+## 2. Tecnologias obrigatórias
+
+Utilize apenas as seguintes tecnologias:
+
+* HTML5 para a estrutura da página.
+* CSS3 para o design, layout, animações e responsividade.
+* JavaScript puro (Vanilla JavaScript) para interações.
+
+Não utilize frameworks como React, Vue ou Angular. Não utilize Bootstrap ou Tailwind CSS.
+
+Organize o projeto nos seguintes arquivos:
+
+```text
+linktree/
+├── index.html
+├── style.css
+└── script.js
+```
+
+O código deve ser bem organizado, legível e comentado apenas quando necessário.
+
+## 3. Design e identidade visual
+
+Crie um design moderno, elegante e profissional, com uma aparência semelhante a plataformas como Linktree, mas com identidade visual própria.
+
+Características visuais:
+
+* Fundo com gradiente moderno, podendo utilizar tons de azul, roxo, preto ou outras cores harmoniosas.
+* Conteúdo centralizado na tela.
+* Foto de perfil circular ou avatar estilizado.
+* Nome do aluno em destaque.
+* Pequena descrição pessoal.
+* Botões de links com bordas arredondadas.
+* Efeitos de hover nos botões.
+* Sombras suaves.
+* Tipografia moderna e fácil de ler.
+* Layout limpo, sem excesso de elementos.
+* Boa experiência visual em dispositivos móveis.
+
+A interface deve parecer um site real, não apenas uma demonstração básica de HTML.
+
+## 4. Estrutura da página
+
+A página deve conter:
+
+### Cabeçalho do perfil
+
+* Foto ou avatar do aluno.
+* Nome completo: "Seu Nome".
+* Nome de usuário ou profissão, por exemplo: "Estudante de Desenvolvimento Web".
+* Descrição curta, como:
+  "Olá! Sou estudante de tecnologia e estou aprendendo a desenvolver projetos incríveis para a web."
+
+### Área de links
+
+Crie botões para os seguintes links:
+
+1. 🌐 Meu Portfólio
+2. 💻 Meu GitHub
+3. 💼 Meu LinkedIn
+4. 📸 Meu Instagram
+5. 📚 Meus Projetos
+6. 📧 Entre em Contato
+
+Os links devem utilizar URLs fictícias ou exemplos editáveis, deixando claro no código onde o aluno pode colocar seus próprios endereços.
+
+Cada botão deve possuir:
+
+* Ícone ou emoji.
+* Nome do link.
+* Efeito de hover.
+* Cursor de interação.
+* Abertura em nova aba quando apropriado.
+
+### Rodapé
+
+Adicionar um rodapé simples com o texto:
+
+"Desenvolvido por Seu Nome ❤️"
+
+Também pode incluir o ano atual de forma dinâmica utilizando JavaScript.
+
+## 5. Funcionalidades JavaScript
+
+Implemente as seguintes funcionalidades usando JavaScript puro:
+
+### Tema claro e escuro
+
+Crie um botão que permita alternar entre tema claro e tema escuro.
+
+O tema deve alterar as cores do fundo, dos textos e dos botões de forma agradável.
+
+### Animações
+
+Adicione animações suaves quando a página carregar, como:
+
+* Fade-in do perfil.
+* Entrada dos botões com pequeno atraso.
+* Efeito hover nos links.
+
+As animações devem ser discretas e não prejudicar a usabilidade.
+
+### Interação com os links
+
+Ao clicar em um botão, o usuário deve ser direcionado ao endereço configurado.
+
+Adicione também uma mensagem visual opcional de feedback ao clicar em um link, sem impedir sua navegação.
+
+### Ano automático
+
+Utilize JavaScript para inserir automaticamente o ano atual no rodapé.
+
+## 6. Responsividade
+
+O site deve funcionar perfeitamente em:
+
+* Celulares.
+* Tablets.
+* Notebooks.
+* Monitores grandes.
+
+Utilize CSS Media Queries para adaptar o layout.
+
+Requisitos:
+
+* A página não pode apresentar rolagem horizontal.
+* Os botões devem ocupar uma largura adequada em telas pequenas.
+* O texto deve permanecer legível.
+* O perfil deve ficar centralizado.
+* O layout deve se adaptar sem quebrar.
+* Os elementos devem possuir espaçamentos consistentes.
+
+## 7. Organização do código
+
+Separe corretamente HTML, CSS e JavaScript.
+
+No HTML:
+
+* Utilize tags semânticas como `header`, `main`, `section` e `footer`.
+* Utilize atributos `alt` nas imagens.
+* Utilize elementos acessíveis e bem estruturados.
+
+No CSS:
+
+* Organize as regras por seções.
+* Utilize variáveis CSS para cores e estilos.
+* Evite código repetido.
+* Crie Media Queries para responsividade.
+
+No JavaScript:
+
+* Utilize funções bem organizadas.
+* Utilize `addEventListener`.
+* Evite código desnecessariamente complexo.
+* Comente as partes importantes para facilitar o aprendizado.
+
+## 8. Requisitos extras
+
+Se possível, inclua:
+
+* Ícones usando emojis ou SVG inline, sem depender de bibliotecas externas.
+* Um botão para copiar o e-mail do aluno.
+* Contador visual de cliques nos links, apenas como demonstração local.
+* Uma pequena seção "Sobre mim".
+* Boa acessibilidade com foco visível nos botões.
+* Respeito à preferência de redução de movimento do usuário.
+
+## 9. Forma de entrega
+
+Entregue o projeto completo, contendo:
+
+1. Código do arquivo `index.html`.
+2. Código do arquivo `style.css`.
+3. Código do arquivo `script.js`.
+4. Explicação breve sobre como cada arquivo funciona.
+5. Instruções para executar o projeto no navegador.
+6. Sugestões de personalização para o aluno trocar nome, foto, cores e links.
+
+**Importante:** O código deve ser funcional, completo e pronto para copiar e executar. Não entregue apenas exemplos ou trechos incompletos.
+
+Desenvolva uma interface visualmente atraente, mas mantenha o código compreensível para um aluno iniciante que está aprendendo desenvolvimento web.
