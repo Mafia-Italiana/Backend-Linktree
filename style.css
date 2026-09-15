@@ -1,0 +1,415 @@
+/* ==========================================================================
+   1. VARIÁVEIS (DESIGN TOKENS)
+   Tema escuro é o padrão. O tema claro sobrescreve as variáveis
+   quando o atributo data-theme="light" está presente no <html>.
+   ========================================================================== */
+
+   :root {
+    /* Cores - tema escuro (padrão) */
+    --bg-deep: #41424C;
+    --bg-mid: #41424C;
+    --surface: rgba(255, 255, 255, 0.06);
+    --surface-border: rgba(255, 255, 255, 0.12);
+    --text: #F4F3EF;
+    --text-dim: #9aa3be;
+    --accent: #7c9aff;
+    --accent-warm: #ffb86b;
+    --shadow-color: rgba(6, 8, 15, 0.45);
+  
+    /* Tipografia */
+    --font-display: "Space Grotesk", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  
+    /* Layout */
+    --content-width: 30rem;
+    --radius-lg: 20px;
+    --radius-full: 999px;
+    --gap: 0.9rem;
+  
+    /* Movimento */
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  
+  html[data-theme="light"] {
+    --bg-deep: #F4F3EF;
+    --bg-mid: #F4F3EF;
+    --surface: rgba(16, 19, 28, 0.045);
+    --surface-border: rgba(16, 19, 28, 0.1);
+    --text: #41424C;
+    --text-dim: #565f7e;
+    --accent: #4c6fef;
+    --accent-warm: #d97f2f;
+    --shadow-color: rgba(76, 92, 140, 0.18);
+  }
+  
+  /* ==========================================================================
+     2. RESET E BASE
+     ========================================================================== */
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: var(--font-display);
+    color: var(--text);
+    background: radial-gradient(circle at 20% -10%, var(--bg-mid), var(--bg-deep) 60%);
+    background-attachment: fixed;
+    transition: background-color 0.4s var(--ease), color 0.4s var(--ease);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  button {
+    font-family: inherit;
+    cursor: pointer;
+  }
+  
+  /* Foco visível para acessibilidade (navegação por teclado) */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--accent-warm);
+    outline-offset: 3px;
+    border-radius: 8px;
+  }
+  
+  /* Respeita a preferência de redução de movimento do usuário */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  /* ==========================================================================
+     3. BOTÃO DE TEMA
+     ========================================================================== */
+  
+  .theme-toggle {
+    position: fixed;
+    top: 1.25rem;
+    right: 1.25rem;
+    z-index: 10;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--surface-border);
+    background: var(--surface);
+    color: var(--text);
+    font-size: 1.15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(6px);
+    transition: transform 0.25s var(--ease), border-color 0.25s var(--ease);
+  }
+  
+  .theme-toggle:hover {
+    transform: rotate(-12deg) scale(1.06);
+    border-color: var(--accent);
+  }
+  
+  /* ==========================================================================
+     4. LAYOUT PRINCIPAL
+     ========================================================================== */
+  
+  .page {
+    width: 100%;
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* ==========================================================================
+     5. CABEÇALHO DE PERFIL
+     ========================================================================== */
+  
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fade-in-up 0.7s var(--ease) both;
+  }
+  
+  .avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--surface-border);
+    box-shadow: 0 12px 30px var(--shadow-color);
+  }
+  
+  .nome {
+    margin: 1.1rem 0 0.2rem;
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  
+  .role {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--accent);
+  }
+  
+  .bio {
+    margin: 0.9rem 0 0;
+    max-width: 26rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    font-size: 0.98rem;
+  }
+  
+  /* ==========================================================================
+     6. SEÇÃO "SOBRE MIM"
+     ========================================================================== */
+  
+  .about {
+    margin-top: 2.2rem;
+    padding: 1.1rem 1.3rem;
+    width: 100%;
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    animation: fade-in-up 0.7s var(--ease) both;
+    animation-delay: 0.08s;
+  }
+  
+  .about h2 {
+    margin: 0 0 0.4rem;
+    font-size: 0.95rem;
+    color: var(--text);
+  }
+  
+  .about p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+  
+  /* ==========================================================================
+     7. ÁREA DE LINKS
+     ========================================================================== */
+  
+  .links {
+    width: 100%;
+    margin-top: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+  }
+  
+  .link-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    width: 100%;
+    padding: 0.9rem 1.1rem;
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    overflow: hidden;
+    isolation: isolate;
+    transition: transform 0.2s var(--ease), border-color 0.2s var(--ease),
+      box-shadow 0.2s var(--ease);
+  
+    /* Anima a entrada dos botões com atraso escalonado (definido inline no HTML seria melhor,
+       mas aqui usamos nth-child para manter o HTML limpo) */
+    animation: fade-in-up 0.6s var(--ease) both;
+  }
+  
+  .links .link-btn:nth-child(1) { animation-delay: 0.16s; }
+  .links .link-btn:nth-child(2) { animation-delay: 0.22s; }
+  .links .link-btn:nth-child(3) { animation-delay: 0.28s; }
+  .links .link-btn:nth-child(4) { animation-delay: 0.34s; }
+  .links .link-btn:nth-child(5) { animation-delay: 0.40s; }
+  .links .link-btn:nth-child(6) { animation-delay: 0.46s; }
+  
+  /* Barra de destaque que desliza da esquerda no hover, em vez de um brilho genérico */
+  .link-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    left: -100%;
+    width: 100%;
+    background: linear-gradient(90deg, var(--accent), transparent);
+    opacity: 0.16;
+    z-index: -1;
+    transition: left 0.35s var(--ease);
+  }
+  
+  .link-btn:hover,
+  .link-btn:focus-visible {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 24px var(--shadow-color);
+  }
+  
+  .link-btn:hover::before,
+  .link-btn:focus-visible::before {
+    left: 0;
+  }
+  
+  .link-btn:active {
+    transform: translateY(0);
+  }
+  
+  .link-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  
+  .link-label {
+    flex: 1;
+    text-align: left;
+    font-weight: 500;
+    font-size: 0.98rem;
+  }
+  
+  .link-count {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    min-width: 1.2em;
+    text-align: right;
+  }
+  
+  /* ==========================================================================
+     8. BOTÃO DE COPIAR E-MAIL
+     ========================================================================== */
+  
+  .copy-btn {
+    margin-top: 1.4rem;
+    padding: 0.6rem 1.1rem;
+    border-radius: var(--radius-full);
+    border: 1px dashed var(--surface-border);
+    background: transparent;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+  }
+  
+  .copy-btn:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+  
+  /* ==========================================================================
+     9. RODAPÉ
+     ========================================================================== */
+  
+  .footer {
+    text-align: center;
+    padding: 1.5rem 1rem 2rem;
+    color: var(--text-dim);
+    font-size: 0.8rem;
+  }
+  
+  /* ==========================================================================
+     10. TOAST DE FEEDBACK
+     ========================================================================== */
+  
+  .toast {
+    position: fixed;
+    left: 50%;
+    bottom: 1.5rem;
+    transform: translate(-50%, 20px);
+    padding: 0.65rem 1.1rem;
+    border-radius: var(--radius-full);
+    background: var(--text);
+    color: var(--bg-deep);
+    font-size: 0.85rem;
+    font-weight: 500;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s var(--ease), transform 0.25s var(--ease);
+    z-index: 20;
+  }
+  
+  .toast.is-visible {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  
+  /* ==========================================================================
+     11. ANIMAÇÕES
+     ========================================================================== */
+  
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* ==========================================================================
+     12. RESPONSIVIDADE
+     ========================================================================== */
+  
+  /* Tablets */
+  @media (max-width: 640px) {
+    .page {
+      padding-top: 4rem;
+    }
+  
+    .name {
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* Celulares pequenos */
+  @media (max-width: 380px) {
+    .link-btn {
+      padding: 0.8rem 0.9rem;
+    }
+  
+    .link-label {
+      font-size: 0.92rem;
+    }
+  
+    .avatar {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  
+  /* Telas grandes: mantém a coluna central confortável, sem esticar os botões */
+  @media (min-width: 1200px) {
+    .page {
+      max-width: 34rem;
+    }
+  }
