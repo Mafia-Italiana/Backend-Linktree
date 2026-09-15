@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sandshrew · Links</title>
+  <meta name="description" content="Página pessoal com os links importantes de Seu Nome.">
+
+  <!-- Tipografia: uma fonte de exibição (para o nome) e uma monoespaçada (para rótulos, remetendo ao universo dev) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <!-- Botão de alternância de tema claro/escuro -->
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Alternar entre tema claro e escuro" aria-pressed="false">
+    <span id="theme-icon" aria-hidden="true">🌙</span>
+  </button>
+
+  <main class="page">
+
+    <!-- Cabeçalho do perfil -->
+    <header class="profile" id="profile">
+      <img
+        class="avatar"
+        src="assets/gordinha.jpeg"
+        style="pointer-events: none; user-select: none;"
+        alt="Foto de perfil de Seu Nome"
+        width="120"
+        height="120"
+      >
+      <h1 class="nome">Sandshrew</h1>
+      <p class="role">Rei Tatuzin </p>
+      <p class="bio">
+        Sandshrew é um Pokémon quadrúpede que se assemelha a um tatu ou pangolim, conhecido por sua carapaça amarelada com um padrão que lembra tijolos.
+      </p>
+    </header>
+
+    <!-- Seção "Sobre mim" -->
+    <section class="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">Sobre mim</h2>
+      <p>
+        Estou construindo um Linktree, projetos com HTML, CSS e JavaScript
+        , sem frameworks.
+      </p>
+    </section>
+
+    <!-- Área de links -->
+    <nav class="links" aria-label="Meus links">
+
+      <a
+        class="link-btn"
+        href="https://github.com/sandshrewslash"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-link-name="Portfólio"
+      >
+        <span class="link-icon" aria-hidden="true">🌐</span>
+        <span class="link-label">Meu Portfólio</span>
+        <span class="link-count" data-count-for="Portfólio"></span>
+      </a>
+
+      <a
+        class="link-btn"
+        href="https://github.com/sandshrewslash"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-link-name="GitHub"
+      >
+        <span class="link-icon" aria-hidden="true">💻</span>
+        <span class="link-label">Meu GitHub</span>
+        <span class="link-count" data-count-for="GitHub"></span>
+      </a>
+
+      <a
+        class="link-btn"
+        href="https://www.linkedin.com/in/sandshrew-slash-61b1b8437/"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-link-name="LinkedIn"
+      >
+        <span class="link-icon" aria-hidden="true">💼</span>
+        <span class="link-label">Meu LinkedIn</span>
+        <span class="link-count" data-count-for="LinkedIn"></span>
+      </a>
+
+      <a
+        class="link-btn"
+        href="https://www.instagram.com/sandshrewslash"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-link-name="Instagram"
+      >
+        <span class="link-icon" aria-hidden="true">📸</span>
+        <span class="link-label">Meu Instagram</span>
+        <span class="link-count" data-count-for="Instagram"></span>
+      </a>
+      <a
+      class="link-btn"
+      href="https://www.pokemon.com/br/pokedex/sandshrew"
+      target="_blank"
+      rel="noopener noreferrer"
+      data-link-name="Projetos"
+    >
+      <span class="link-icon" aria-hidden="true">📚</span>
+      <span class="link-label">Wiki Sandshrew</span>
+      <span class="link-count" data-count-for="Projetos"></span>
+    </a>
+
+
+      <a
+        class="link-btn"
+        href="mailto:sandshrew.slash777@gmail.com"
+        data-link-name="Contato"
+      >
+        <span class="link-icon" aria-hidden="true">📧</span>
+        <span class="link-label">Entre em Contato</span>
+        <span class="link-count" data-count-for="Contato"></span>
+      </a>
+
+    </nav>
+
+    <!-- Copiar e-mail com um clique -->
+    <button id="copy-email" class="copy-btn" type="button" data-email="sandshrew.slash777@gmail.com">
+      <span aria-hidden="true">📋</span> Copiar meu e-mail
+    </button>
+
+  </main>
+
+  <footer class="footer">
+    <p>Desenvolvido por Pedro Carnio, Luiz Felipe, Jonatan Natan - <span id="year"></span></p>
+  </footer>
+
+  <!-- Mensagem de feedback (toast) para cliques e cópia de e-mail -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="src/main.js"></script>
+</body>
+</html>
