@@ -4,7 +4,7 @@
 
 ---
 
-## 📁 Estutura do Projeto
+## 📁 Estrutura do Projeto
 
 ```text
 .
