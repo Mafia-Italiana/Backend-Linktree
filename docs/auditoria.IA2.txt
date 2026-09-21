@@ -1,0 +1,84 @@
+Code 2 HTML :
+Explicação :
+
+Esse Code Html, cria os layout principais dos links,
+Usa o <a> para lever ate o link (Link do Site) 
+usa o <span> para exibir o emoji e nome do site (Exemplo Github ou Instagram)   
+
+
+
+Code:
+    <!-- IA:Área de links -->
+    <nav class="links" aria-label="Meus links">
+
+      <a
+        class="link-btn"
+        href="https://github.com/sandshrewslash"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-link-name="Portfólio"
+      >
+        <span class="link-icon" aria-hidden="true">🌐</span>
+        <span class="link-label">Meu Portfólio</span>
+        <span class="link-count" data-count-for="Portfólio"></span>
+      </a>
+
+      <a
+        class="link-btn"
+        href="https://github.com/sandshrewslash"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-link-name="GitHub"
+      >
+        <span class="link-icon" aria-hidden="true">💻</span>
+        <span class="link-label">Meu GitHub</span>
+        <span class="link-count" data-count-for="GitHub"></span>
+      </a>
+
+      <a
+        class="link-btn"
+        href="https://www.linkedin.com/in/sandshrew-slash-61b1b8437/"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-link-name="LinkedIn"
+      >
+        <span class="link-icon" aria-hidden="true">💼</span>
+        <span class="link-label">Meu LinkedIn</span>
+        <span class="link-count" data-count-for="LinkedIn"></span>
+      </a>
+
+      <a
+        class="link-btn"
+        href="https://www.instagram.com/sandshrewslash"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-link-name="Instagram"
+      >
+        <span class="link-icon" aria-hidden="true">📸</span>
+        <span class="link-label">Meu Instagram</span>
+        <span class="link-count" data-count-for="Instagram"></span>
+      </a>
+      <a
+      class="link-btn"
+      href="https://www.pokemon.com/br/pokedex/sandshrew"
+      target="_blank"
+      rel="noopener noreferrer"
+      data-link-name="Projetos"
+    >
+      <span class="link-icon" aria-hidden="true">📚</span>
+      <span class="link-label">Wiki Sandshrew</span>
+      <span class="link-count" data-count-for="Projetos"></span>
+    </a>
+
+
+      <a
+        class="link-btn"
+        href="mailto:sandshrew.slash777@gmail.com"
+        data-link-name="Contato"
+      >
+        <span class="link-icon" aria-hidden="true">📧</span>
+        <span class="link-label">Entre em Contato</span>
+        <span class="link-count" data-count-for="Contato"></span>
+      </a>
+
+    </nav>

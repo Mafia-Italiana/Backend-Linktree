@@ -1,10 +1,8 @@
 /* ==========================================================================
-   script.js
-   Funcionalidades da página: tema claro/escuro, ano automático,
-   contador de cliques nos links, cópia do e-mail e mensagens de feedback.
+   IA:main.js
    ========================================================================== */
 
-// Executa o código somente depois que o HTML terminar de carregar
+// IA:Executa o código somente depois que o HTML terminar de carregar
 document.addEventListener("DOMContentLoaded", () => {
     setupTheme();
     setupYear();
@@ -13,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   
   /* --------------------------------------------------------------------------
-     1. TEMA CLARO / ESCURO
+    IA: 1. TEMA CLARO / ESCURO
      Guarda a escolha do usuário no localStorage para lembrar na próxima visita.
      -------------------------------------------------------------------------- */
   function setupTheme() {
@@ -22,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const icon = document.getElementById("theme-icon");
     const STORAGE_KEY = "linktree-theme";
   
-    // Usa o tema salvo, ou a preferência do sistema operacional, como ponto de partida
+    // IA: Usa o tema salvo, ou a preferência do sistema operacional, como ponto de partida
     const savedTheme = localStorage.getItem(STORAGE_KEY);
     const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
     const initialTheme = savedTheme || (prefersLight ? "light" : "dark");
@@ -49,16 +47,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   
-  /* --------------------------------------------------------------------------
-     2. ANO AUTOMÁTICO NO RODAPÉ
-     -------------------------------------------------------------------------- */
-  function setupYear() {
-    const yearSpan = document.getElementById("year");
-    yearSpan.textContent = new Date().getFullYear();
-  }
+
   
   /* --------------------------------------------------------------------------
-     3. CONTADOR DE CLIQUES NOS LINKS
+     IA:2. CONTADOR DE CLIQUES NOS LINKS
      Apenas uma demonstração local: os números ficam salvos no navegador
      do próprio usuário, não em um servidor.
      -------------------------------------------------------------------------- */
@@ -67,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const links = document.querySelectorAll(".link-btn");
     const counts = loadCounts();
   
-    // Mostra os contadores já salvos assim que a página abre
+    // IA:Mostra os contadores já salvos assim que a página abre
     links.forEach((link) => updateCountBadge(link, counts));
   
     links.forEach((link) => {
@@ -78,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
         updateCountBadge(link, counts);
         showToast(`Abrindo "${link.querySelector(".link-label").textContent}"...`);
-        // O link continua funcionando normalmente: não usamos preventDefault().
+        // IA:O link continua funcionando normalmente: não usamos preventDefault().
       });
     });
   
@@ -99,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   
   /* --------------------------------------------------------------------------
-     4. COPIAR E-MAIL COM UM CLIQUE
+     IA:3. COPIAR E-MAIL COM UM CLIQUE
      -------------------------------------------------------------------------- */
   function setupCopyEmail() {
     const copyBtn = document.getElementById("copy-email");
@@ -119,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   
   /* --------------------------------------------------------------------------
-     5. MENSAGEM DE FEEDBACK (TOAST)
+     IA:4. MENSAGEM DE FEEDBACK (TOAST)
      -------------------------------------------------------------------------- */
   let toastTimeout;
   function showToast(message) {
@@ -131,4 +123,12 @@ document.addEventListener("DOMContentLoaded", () => {
     toastTimeout = setTimeout(() => {
       toast.classList.remove("is-visible");
     }, 2200);
+  }
+
+
+
+// Adição de Ano Atual no Rodape
+  function setupYear() {
+    const yearSpan = document.getElementById("year");
+    yearSpan.textContent = new Date().getFullYear();
   }

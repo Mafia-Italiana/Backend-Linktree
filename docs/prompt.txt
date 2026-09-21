@@ -1,3 +1,9 @@
+Prompt Usado para Criar o Site:
+Usado Gemini AI FREE: para criar Prompt
+Usado Claude AI FREE: para Rodar Prompt
+
+
+
 # Desenvolvimento de uma Página Pessoal no Estilo Linktree
 
 Você é um desenvolvedor web front-end especializado em HTML, CSS e JavaScript. Sua tarefa é desenvolver uma página pessoal no estilo Linktree, reunindo os links importantes de um aluno em uma única interface moderna, bonita, responsiva e funcional.
@@ -88,14 +94,6 @@ Cada botão deve possuir:
 * Efeito de hover.
 * Cursor de interação.
 * Abertura em nova aba quando apropriado.
-
-### Rodapé
-
-Adicionar um rodapé simples com o texto:
-
-"Desenvolvido por Seu Nome ❤️"
-
-Também pode incluir o ano atual de forma dinâmica utilizando JavaScript.
 
 ## 5. Funcionalidades JavaScript
 

@@ -1,0 +1,49 @@
+ Code 1 Javascript:
+ Explicação:
+
+ Esse Code de Js adiciona um Sistema de Troca de Tema (do Escuro para o Claro),
+ o botão (🌙/☀) Serve para Mudar o Tema, 
+ o Tema padrão é o Escuro , Quando o Usuario muda para o Tema Branco , 
+ O Css sobrescreve o code do Tema Escuro para deixar com tema claro, 
+ O Codigo Também guarda a escolha de tema do Usuario no LocalStorage do navegador.
+
+
+  
+Code:
+ src/main.js
+ /* --------------------------------------------------------------------------
+    IA: 1. TEMA CLARO / ESCURO
+     Guarda a escolha do usuário no localStorage para lembrar na próxima visita.
+     -------------------------------------------------------------------------- */
+  function setupTheme() {
+    const root = document.documentElement;
+    const toggleBtn = document.getElementById("theme-toggle");
+    const icon = document.getElementById("theme-icon");
+    const STORAGE_KEY = "linktree-theme";
+  
+    // IA: Usa o tema salvo, ou a preferência do sistema operacional, como ponto de partida
+    const savedTheme = localStorage.getItem(STORAGE_KEY);
+    const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+    const initialTheme = savedTheme || (prefersLight ? "light" : "dark");
+  
+    applyTheme(initialTheme);
+  
+    toggleBtn.addEventListener("click", () => {
+      const isLight = root.getAttribute("data-theme") === "light";
+      const nextTheme = isLight ? "dark" : "light";
+      applyTheme(nextTheme);
+      localStorage.setItem(STORAGE_KEY, nextTheme);
+    });
+  
+    function applyTheme(theme) {
+      if (theme === "light") {
+        root.setAttribute("data-theme", "light");
+        icon.textContent = "☀️";
+        toggleBtn.setAttribute("aria-pressed", "true");
+      } else {
+        root.removeAttribute("data-theme");
+        icon.textContent = "🌙";
+        toggleBtn.setAttribute("aria-pressed", "false");
+      }
+    }
+  }

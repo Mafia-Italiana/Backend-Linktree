@@ -1,1 +1,6 @@
+Prompt Usado Para Corrigir Bug de ( the server responded with a status of 404 ()):
+Usado Gemini AI FREE: para criar Prompt
+Usado Gemini AI FREE: para Rodar Prompt
 
+Estou recebendo o erro Failed to load resource: the server responded with a status of 404 () no meu projeto.
+Pode me ajudar a identificar a causa exata do erro 404 e me mostrar como corrigir o caminho do arquivo ou a rota?

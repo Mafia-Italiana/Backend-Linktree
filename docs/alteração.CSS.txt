@@ -1,0 +1,80 @@
+
+Troca de Cor de Fundo Tema Escuro/Claro:
+
+do preto #070a09 para Grafite #41424C
+do branco #ffffff para Branco Artico #F4F3EF
+
+
+
+Aumento do Tamanho do avatar e adição de Border 
+.avatar
+
+de 
+  .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 12px 30px var(--shadow-color);
+  }
+
+para 
+  .avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--surface-border);
+    box-shadow: 0 12px 30px var(--shadow-color);
+  }
+
+
+
+Com Ajuda da IA 
+Criação do Rodapé no Css
+
+.footer {
+  text-align: center;
+  padding: 1.5rem 1rem 2rem;
+  background-color: #3b503a; (Verde Musgo Escolhido por Min)
+  color: #F4F3EF;  (foi Trocado de #ffffff para  Branco Artico #F4F3EF;)
+  font-size: 0.8rem;
+}
+
+
+
+Aumentando Tamanho da Font da bio 
+
+de font-size: 0.8rem; para 1.0rem;
+
+  .bio {
+    margin: 0.9rem 0 0;
+    max-width: 26rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    font-size: 1.0rem;
+  }
+
+
+
+Com Ajuda da IA
+Adicionando uma Borda Verde Musgo #3b503a; ao redor do Avatar 
+antes:
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--surface-border);
+    box-shadow: 0 12px 30px var(--shadow-color);
+  } 
+
+depois:
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #3b503a; 
+  box-shadow: 0 12px 30px var(--shadow-color);
+}

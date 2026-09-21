@@ -1,11 +1,11 @@
 /* ==========================================================================
-   1. VARIÁVEIS (DESIGN TOKENS)
+   IA:1. VARIÁVEIS (DESIGN TOKENS)
    Tema escuro é o padrão. O tema claro sobrescreve as variáveis
    quando o atributo data-theme="light" está presente no <html>.
    ========================================================================== */
 
    :root {
-    /* Cores - tema escuro (padrão) */
+    /* IA:Cores - tema escuro (padrão) */
     --bg-deep: #41424C;
     --bg-mid: #41424C;
     --surface: rgba(255, 255, 255, 0.06);
@@ -16,17 +16,17 @@
     --accent-warm: #ffb86b;
     --shadow-color: rgba(6, 8, 15, 0.45);
   
-    /* Tipografia */
+    /* IA:Tipografia */
     --font-display: "Space Grotesk", system-ui, sans-serif;
     --font-mono: "JetBrains Mono", ui-monospace, monospace;
   
-    /* Layout */
+    /* IA:Layout */
     --content-width: 30rem;
     --radius-lg: 20px;
     --radius-full: 999px;
     --gap: 0.9rem;
   
-    /* Movimento */
+    /* IA:Movimento */
     --ease: cubic-bezier(0.22, 1, 0.36, 1);
   }
   
@@ -43,7 +43,7 @@
   }
   
   /* ==========================================================================
-     2. RESET E BASE
+     IA:2. RESET E BASE
      ========================================================================== */
   
   *,
@@ -83,7 +83,7 @@
     cursor: pointer;
   }
   
-  /* Foco visível para acessibilidade (navegação por teclado) */
+  /* IA:Foco visível para acessibilidade (navegação por teclado) */
   a:focus-visible,
   button:focus-visible {
     outline: 2px solid var(--accent-warm);
@@ -91,7 +91,7 @@
     border-radius: 8px;
   }
   
-  /* Respeita a preferência de redução de movimento do usuário */
+  /* IA:Respeita a preferência de redução de movimento do usuário */
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -104,7 +104,7 @@
   }
   
   /* ==========================================================================
-     3. BOTÃO DE TEMA
+     IA:3. BOTÃO DE TEMA
      ========================================================================== */
   
   .theme-toggle {
@@ -132,7 +132,7 @@
   }
   
   /* ==========================================================================
-     4. LAYOUT PRINCIPAL
+     IA:4. LAYOUT PRINCIPAL
      ========================================================================== */
   
   .page {
@@ -147,7 +147,7 @@
   }
   
   /* ==========================================================================
-     5. CABEÇALHO DE PERFIL
+     IA:5. CABEÇALHO DE PERFIL
      ========================================================================== */
   
   .profile {
@@ -157,14 +157,14 @@
     animation: fade-in-up 0.7s var(--ease) both;
   }
   
-  .avatar {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--surface-border);
-    box-shadow: 0 12px 30px var(--shadow-color);
-  }
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #3b503a; 
+  box-shadow: 0 12px 30px var(--shadow-color);
+}
   
   .nome {
     margin: 1.1rem 0 0.2rem;
@@ -185,11 +185,11 @@
     max-width: 26rem;
     color: var(--text-dim);
     line-height: 1.6;
-    font-size: 0.98rem;
+    font-size: 1.0rem;
   }
   
   /* ==========================================================================
-     6. SEÇÃO "SOBRE MIM"
+     IA:6. SEÇÃO "SOBRE MIM"
      ========================================================================== */
   
   .about {
@@ -217,7 +217,7 @@
   }
   
   /* ==========================================================================
-     7. ÁREA DE LINKS
+     IA:7. ÁREA DE LINKS
      ========================================================================== */
   
   .links {
@@ -241,9 +241,9 @@
     overflow: hidden;
     isolation: isolate;
     transition: transform 0.2s var(--ease), border-color 0.2s var(--ease),
-      box-shadow 0.2s var(--ease);
+    box-shadow 0.2s var(--ease);
   
-    /* Anima a entrada dos botões com atraso escalonado (definido inline no HTML seria melhor,
+    /* IA:Anima a entrada dos botões com atraso escalonado (definido inline no HTML seria melhor,
        mas aqui usamos nth-child para manter o HTML limpo) */
     animation: fade-in-up 0.6s var(--ease) both;
   }
@@ -255,7 +255,7 @@
   .links .link-btn:nth-child(5) { animation-delay: 0.40s; }
   .links .link-btn:nth-child(6) { animation-delay: 0.46s; }
   
-  /* Barra de destaque que desliza da esquerda no hover, em vez de um brilho genérico */
+  /* IA:Barra de destaque que desliza da esquerda no hover, em vez de um brilho genérico */
   .link-btn::before {
     content: "";
     position: absolute;
@@ -305,7 +305,7 @@
   }
   
   /* ==========================================================================
-     8. BOTÃO DE COPIAR E-MAIL
+     IA:8. BOTÃO DE COPIAR E-MAIL
      ========================================================================== */
   
   .copy-btn {
@@ -324,19 +324,10 @@
     border-color: var(--accent);
   }
   
-  /* ==========================================================================
-     9. RODAPÉ
-     ========================================================================== */
-  
-  .footer {
-    text-align: center;
-    padding: 1.5rem 1rem 2rem;
-    color: var(--text-dim);
-    font-size: 0.8rem;
-  }
+ 
   
   /* ==========================================================================
-     10. TOAST DE FEEDBACK
+     IA:9. TOAST DE FEEDBACK
      ========================================================================== */
   
   .toast {
@@ -362,7 +353,7 @@
   }
   
   /* ==========================================================================
-     11. ANIMAÇÕES
+     IA:10. ANIMAÇÕES
      ========================================================================== */
   
   @keyframes fade-in-up {
@@ -377,10 +368,10 @@
   }
   
   /* ==========================================================================
-     12. RESPONSIVIDADE
+     IA:11. RESPONSIVIDADE
      ========================================================================== */
   
-  /* Tablets */
+  /*IA: Tablets */
   @media (max-width: 640px) {
     .page {
       padding-top: 4rem;
@@ -391,7 +382,7 @@
     }
   }
   
-  /* Celulares pequenos */
+  /*IA: Celulares pequenos */
   @media (max-width: 380px) {
     .link-btn {
       padding: 0.8rem 0.9rem;
@@ -407,9 +398,23 @@
     }
   }
   
-  /* Telas grandes: mantém a coluna central confortável, sem esticar os botões */
+  /* IA:Telas grandes: mantém a coluna central confortável, sem esticar os botões */
   @media (min-width: 1200px) {
     .page {
       max-width: 34rem;
     }
   }
+
+
+
+/* ==========================================================================
+IA: Criação do RODAPÉ
+========================================================================== */
+  
+.footer {
+  text-align: center;
+  padding: 1.5rem 1rem 2rem;
+  background-color: #3b503a; 
+  color: #F4F3EF; 
+  font-size: 0.8rem;
+}

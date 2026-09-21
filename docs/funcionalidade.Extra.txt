@@ -1,0 +1,5 @@
+No src/main.js Foram Adicionando 
+tema claro/escuro,
+contador de cliques nos links,
+cópia do e-mail ao clicar no botão 
+Adição de Class year Para Ano Atual no rodapé 
